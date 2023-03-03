@@ -6,7 +6,7 @@
 // @author       You
 // @match        https://www.ikea.com/ro/ro/p/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ikea.com
-// @require      https://code.jquery.com/jquery-3.6.3.min.js
+// @require      https://code.jquery.com/jquery-3.6.3.min.js#sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=
 // @require      https://gist.githubusercontent.com/BrockA/2625891/raw/waitForKeyElements.js
 // @grant        GM_setClipboard
 // ==/UserScript==
