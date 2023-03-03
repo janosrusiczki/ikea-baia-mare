@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         IKEA Baia Mare
-// @namespace    http://tampermonkey.net/
+// @name         IKEA Baia Mare Order Helper
+// @namespace    https://github.com/janosrusiczki/ikea-baia-mare
 // @version      0.1
-// @description  Adaugă buton de copiat date pentru spreadsheet-ul de comandă pe pagina de produs IKEA România
-// @author       You
+// @description  Adds a button to IKEA Romania product pages which when pressed copies some data to the clipboard. This data can then be used in Google Sheets.
+// @author       Janos Rusiczki
 // @match        https://www.ikea.com/ro/ro/p/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ikea.com
 // @require      https://code.jquery.com/jquery-3.6.3.min.js#sha256=a6f3f0faea4b3d48e03176341bef0ed3151ffbf226d4c6635f1c6039c0500575
