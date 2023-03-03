@@ -6,8 +6,8 @@
 // @author       You
 // @match        https://www.ikea.com/ro/ro/p/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ikea.com
-// @require      https://code.jquery.com/jquery-3.6.3.min.js#sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=
-// @require      https://gist.githubusercontent.com/BrockA/2625891/raw/waitForKeyElements.js
+// @require      https://code.jquery.com/jquery-3.6.3.min.js#sha256-a6f3f0faea4b3d48e03176341bef0ed3151ffbf226d4c6635f1c6039c0500575
+// @require      https://gist.githubusercontent.com/BrockA/2625891/raw/waitForKeyElements.js#sha256-fe967293ad8e533dd8ad61e20461c1fe05d369eed31e6d3e73552c2231b528da
 // @grant        GM_setClipboard
 // ==/UserScript==
 
