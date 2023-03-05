@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         IKEA Baia Mare Order Helper
 // @namespace    https://github.com/janosrusiczki/ikea-baia-mare
-// @version      0.1
+// @version      0.2
 // @description  Adds a button to IKEA Romania product pages which when pressed copies some data to the clipboard. This data can then be used in Google Sheets.
 // @author       Janos Rusiczki
 // @match        https://www.ikea.com/ro/ro/p/*
@@ -15,7 +15,6 @@
 
 (function() {
     'use strict';
-    console.log('Start userscript...');
 
     waitForKeyElements(".js-buy-module.pip-buy-module:not(.pip-buy-module--initially-hidden) .pip-buy-module__buttons--container button:not(#inserted-button)", actionFunction);
 
@@ -25,10 +24,10 @@
     };
 
     function copyDataToClipboard() {
-        var productIdentifier = firstText('.pip-product-identifier__value');
-        var title = firstText('.pip-header-section__title--big.notranslate');
-        var description = `${firstText('.pip-header-section__description-text')} ${firstText('.pip-link-button.pip-header-section__description-measurement')}`;
-        var price = `${firstText('.pip-temp-price__integer')}.${firstText('.pip-temp-price__decimal').replace(/\D/g,'')}`;
+        var productIdentifier = firstTextTrim('.pip-product-identifier__value');
+        var title = firstTextTrim('.pip-header-section__title--big.notranslate');
+        var description = `${firstTextTrim('.pip-header-section__description-text')} ${firstTextTrim('.pip-link-button.pip-header-section__description-measurement')}`.trim();
+        var price = `${firstTextTrim('.pip-temp-price__integer')}.${firstTextTrim('.pip-temp-price__decimal').replace(/\D/g,'')}`;
         var theString = `${productIdentifier}\t${calculateWeight()}\t${title}\t${description}\t${price}`;
         console.log(theString);
         GM_setClipboard(theString);
@@ -42,7 +41,7 @@
         return totalWeight;
     }
 
-    function firstText(selector) {
-        return $(selector).first().text();
+    function firstTextTrim(selector) {
+        return $(selector).first().text().trim();
     }
 })();
