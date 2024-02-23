@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         IKEA Baia Mare Order Helper
 // @namespace    https://github.com/janosrusiczki/ikea-baia-mare
-// @version      0.2
+// @version      0.3
 // @description  Adds a button to IKEA Romania product pages which when pressed copies some data to the clipboard. This data can then be used in Google Sheets.
 // @author       Janos Rusiczki
 // @match        https://www.ikea.com/ro/ro/p/*
@@ -16,10 +16,10 @@
 (function() {
     'use strict';
 
-    waitForKeyElements(".js-buy-module.pip-buy-module:not(.pip-buy-module--initially-hidden) .pip-buy-module__buttons--container button:not(#inserted-button)", actionFunction);
+    waitForKeyElements(".js-buy-module.pip-buy-module:not(.pip-buy-module--initially-hidden)", actionFunction);
 
     function actionFunction(jNode) {
-        jNode.after('<button type="button" id="inserted-button" class="pip-btn pip-btn--emphasised"><span class="pip-btn__inner"><span class="pip-btn__label">Copiază pentru spreadsheet</span></span></button></div>');
+        jNode.after('<div class="pip-buy-module__buttons--container"><button type="button" class="pip-btn pip-btn--emphasised" id="inserted-button" style="display: block; margin: auto;"><span class="pip-btn__inner"><span class="pip-btn__label">Copiază pentru spreadsheet</span></span></button></div></div>');
         $('#inserted-button').click(copyDataToClipboard);
     };
 
